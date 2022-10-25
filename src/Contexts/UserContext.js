@@ -33,7 +33,7 @@ const logOut=()=>{
     return ()=>{unsubscribe();}
 }, [])
     
-    const authInfo={user,createUser,userLogIn,logOut,signInWithGoogle};
+    const authInfo={user,createUser,userLogIn,logOut,signInWithGoogle, signInWithGithub};
 return (
         <AuthContext.Provider value={authInfo}>
             {children}

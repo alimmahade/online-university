@@ -4,7 +4,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 
 const Register = () => {
-    const {createUser,signInWithGoogle, signInWithGithub}= useContext(AuthContext);
+    const {createUser,signInWithGoogle,signInWithGithub}= useContext(AuthContext);
     console.log(createUser)
 
     const handleRegister=(event)=>{
@@ -15,7 +15,7 @@ const Register = () => {
         const name=form.name.value;
         const password=form.password.value;
         createUser(email,password)
-        .then(result=>{
+        .then(result=>{            
             const user=result.user;
             console.log('Registered user',user,"User Name",name)
         }) 

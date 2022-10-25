@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Courses from './Components/Courses';
+import Faq from './Components/Faq';
 import Home from './Components/Home';
 import LogIn from './Components/LogIn';
 import Register from './Components/Register';
@@ -15,6 +16,7 @@ function App() {
         {path:'/home',element:<Home></Home>},
         {path:'/login',element:<LogIn></LogIn>},
         {path:'/register',element:<Register></Register>},
+        {path:'/faq',element:<Faq></Faq>},
         {path:'/courses',
           element:<PrivateRoutes>
             <Courses/>
