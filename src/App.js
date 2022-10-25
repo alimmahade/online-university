@@ -2,7 +2,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Courses from './Components/Courses';
-import Header from './Components/Header';
 import Home from './Components/Home';
 import LogIn from './Components/LogIn';
 import Register from './Components/Register';
@@ -20,7 +19,7 @@ function App() {
           element:<PrivateRoutes>
             <Courses/>
           </PrivateRoutes>},
-        {path:'/',element:<Header></Header>}
+        
       ]
     }
   ])
