@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {AuthContext} from '../Contexts/UserContext';
-import favicon from '../asset/favicon.png'
+import favicon from '../asset/favicon.png';
+import './Header.css';
+
 
 const Header = () => {
     const {user,logOut}= useContext(AuthContext);
@@ -17,19 +19,19 @@ const Header = () => {
             
             <div className="navbar bg-secondary text-primary-content">
                 
-                <Link className="btn btn-ghost normal-case text-xl" to='home'> 
+                <NavLink className="btn btn-ghost normal-case text-xl" to='home'> 
                     <img className='h-10 w-auto' src={favicon} alt="" />
                     Online University
-                </Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='home'>Home</Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='register'>Register</Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='courses'>Courses</Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='faq'>FAQ</Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='blog'>Blog</Link>
+                </NavLink>
+                <NavLink className="btn btn-ghost normal-case text-xl {({isActive})=>isActive? 'active': undefined}" to='home'>Home</NavLink>
+                <NavLink className="btn btn-ghost normal-case text-xl" to='register'>Register</NavLink>
+                <NavLink className="btn btn-ghost normal-case text-xl" to='courses'>Courses</NavLink>
+                <NavLink className="btn btn-ghost normal-case text-xl" to='faq'>FAQ</NavLink>
+                <NavLink className="btn btn-ghost normal-case text-xl" to='blog'>Blog</NavLink>
                 {user?.uid&&<span>Welcome: {user.displayName}</span>}
                 
                 {user?.uid? <button onClick={handleLogOut} className="btn btn-secondary">Log Out</button>
-                :<Link className="btn btn-ghost normal-case text-xl" to='login'>Login</Link>}
+                :<NavLink className="btn btn-ghost normal-case text-xl" to='login'>Login</NavLink>}
             </div>
         </div>
     );
