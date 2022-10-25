@@ -25,6 +25,7 @@ const Header = () => {
                 <Link className="btn btn-ghost normal-case text-xl" to='register'>Register</Link>
                 <Link className="btn btn-ghost normal-case text-xl" to='courses'>Courses</Link>
                 <Link className="btn btn-ghost normal-case text-xl" to='faq'>FAQ</Link>
+                <Link className="btn btn-ghost normal-case text-xl" to='blog'>Blog</Link>
                 {user?.uid&&<span>Welcome: {user.displayName}</span>}
                 
                 {user?.uid? <button onClick={handleLogOut} className="btn btn-secondary">Log Out</button>

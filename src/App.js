@@ -1,6 +1,7 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blog from './Components/Blog';
 import Courses from './Components/Courses';
 import Faq from './Components/Faq';
 import Home from './Components/Home';
@@ -17,6 +18,7 @@ function App() {
         {path:'/login',element:<LogIn></LogIn>},
         {path:'/register',element:<Register></Register>},
         {path:'/faq',element:<Faq></Faq>},
+        {path:'/blog',element:<Blog></Blog>},
         {path:'/courses',
           element:<PrivateRoutes>
             <Courses/>
