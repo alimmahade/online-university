@@ -21,7 +21,7 @@ const LogIn = () => {
         console.log(email,password)
         userLogIn(email,password)
             .then(result=>{
-              toast.success('log in sucess')
+              toast.success('Welcome: Log in sucess')
               form.reset();
               navigate(from,{replace:true})
               

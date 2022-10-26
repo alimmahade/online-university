@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Contexts/UserContext';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -15,7 +17,9 @@ const Register = () => {
         const name=form.name.value;
         const password=form.password.value;
         createUser(email,password)
-        .then(result=>{            
+        .then(result=>{ 
+          toast.success('Congratulation: Registration in sucess')
+          form.reset();
             const user=result.user;
             console.log('Registered user',user,"User Name",name)
         }) 
