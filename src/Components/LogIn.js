@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UserContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const {userLogIn}=useContext(AuthContext);
@@ -16,8 +18,10 @@ const LogIn = () => {
         console.log(email,password)
         userLogIn(email,password)
             .then(result=>{
-                const user=result.user;
-                console.log(user)
+              toast.success('log in sucess')
+              
+                // const user=result.user;
+                // console.log(user)
             })
             .catch(error=>{console.log(error)})
     }

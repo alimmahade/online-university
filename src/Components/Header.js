@@ -30,6 +30,7 @@ const Header = () => {
                 <NavLink className="btn btn-ghost normal-case text-xl" to='blog'>Blog</NavLink>
                 {user?.uid&&<span>Welcome: {user.displayName}</span>}
                 
+                
                 {user?.uid? <button onClick={handleLogOut} className="btn btn-secondary">Log Out</button>
                 :<NavLink className="btn btn-ghost normal-case text-xl" to='login'>Login</NavLink>}
             </div>
