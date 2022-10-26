@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <div>
             
-            <div className="navbar bg-secondary text-primary-content">
+            <div className="navbar bg-secondary text-primary-content px-2 sm:px-4 py-2.5">
                 
                 <NavLink className="btn btn-ghost normal-case text-xl" to='home'> 
                     <img className='h-10 w-auto' src={favicon} alt="" />
