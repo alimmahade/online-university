@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './Components/Blog';
+import CourseDetails from './Components/CourseDetails';
 import Courses from './Components/Courses';
 import Faq from './Components/Faq';
 import Home from './Components/Home';
@@ -22,6 +23,10 @@ function App() {
         {path:'/courses',
           element:<PrivateRoutes>
             <Courses/>
+          </PrivateRoutes>},
+        {path:'/coursedetails',
+          element:<PrivateRoutes>
+            <CourseDetails></CourseDetails>
           </PrivateRoutes>},
           {path:'*',element:<div>
             <h1 className="text-5xl font-bold">Unhandled Thrown Error!

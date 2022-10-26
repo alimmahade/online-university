@@ -1,5 +1,6 @@
-import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
+
+
 
 const Courses = () => {
     const [courses, setCourses]=useState([]);
@@ -14,9 +15,11 @@ const Courses = () => {
             <h1>All courses: {courses.length}</h1>
         <div>
             {
-                courses.map(course=><p key={course.id}>
-                    <p>{course.name}</p>
-                </p>)
+                courses.map(course=><div>
+                    <p>{course.Name}</p>
+                    <img src={course.picture} alt="" />
+                </div>)
+                    
             }
         </div>
         </div>

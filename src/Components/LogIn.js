@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UserContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const {userLogIn}=useContext(AuthContext);
+    const navigate=useNavigate();
+    const location=useLocation();
+    const from=location.state?.from?.pathname || '/';
     console.log(userLogIn);
 
     const handleLogin=(event)=>{
@@ -19,6 +22,8 @@ const LogIn = () => {
         userLogIn(email,password)
             .then(result=>{
               toast.success('log in sucess')
+              form.reset();
+              navigate(from,{replace:true})
               
                 // const user=result.user;
                 // console.log(user)
