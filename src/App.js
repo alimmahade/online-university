@@ -13,6 +13,7 @@ import PrivateRoutes from './Routes/PrivateRoutes';
 
 function App() {
   const router=createBrowserRouter([
+    // All Routes Here
     {
       path:'/', element:<Main></Main>,children:[
         {path:'/',element:<Home></Home>},

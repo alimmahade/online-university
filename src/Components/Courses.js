@@ -2,6 +2,7 @@
 import { Card } from 'react-bootstrap';
 import {  useLoaderData } from 'react-router-dom';
 import './Courses.css';
+import PDF from './PDF';
 import Sidebar from './Sidebar';
 
 const Courses = () => {
@@ -20,7 +21,7 @@ const Courses = () => {
                     <div>
                         <div className='c-card'>
                         <Card.Img variant="top" src={loaderData.picture} className='img-size' />
-                            <h2 className='bol'>{loaderData.name}</h2>
+                            <h2 className='bg-red-500 text-white'>{loaderData.name}</h2>
                             <p>{loaderData.details}</p>
                             </div>
                             
@@ -33,7 +34,6 @@ const Courses = () => {
                 loaderData.map(data=><Sidebar key={data.id} data={data}></Sidebar>)
              }
             </div>
-            
            </div>
         </div>
     );
