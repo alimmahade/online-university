@@ -1,35 +1,43 @@
-import React, { useEffect, useState } from 'react';
 
-
+import { Card } from 'react-bootstrap';
+import {  useLoaderData } from 'react-router-dom';
+import './Courses.css';
+import Sidebar from './Sidebar';
 
 const Courses = () => {
-    const [courses, setCourses]=useState([]);
-
-    useEffect(()=>{
-        fetch('http://localhost:5000/courses')
-        .then(res=> res.json())
-        .then(data=>setCourses(data))
-    },[])
+    
+    const loaderData=useLoaderData();
+    console.log(loaderData);
+    
+    
+    // const course =useLoaderData();
     return (
         <div>
-            <h1>All courses: {courses.length}</h1>
-        <div>
-            {
-                courses.map(course=>
-                    <div className="card card-side bg-base-100 shadow-xl">
-                        <img className='h-20 w-20' src={course.picture} alt=""/>
-                        <div className="card-body">
-                            <h2 className="card-title">{course.name}</h2>
-                            <p>{course.details}</p>
-                            <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Course Detail</button>
+            <h1>All courses: {loaderData.length}</h1>
+          <div className='c-container'>
+           <div className='layout'>
+            {loaderData.map(loaderData=>
+                    <div>
+                        <div className='c-card'>
+                        <Card.Img variant="top" src={loaderData.picture} className='img-size' />
+                            <h2>{loaderData.name}</h2>
+                            <p>{loaderData.details}</p>
+                            <div>
+                            <button className='btn-secondary p-2 border-2 rounded-lg'>Course Detail</button>
                             </div>
-                        </div>
+                            </div>
+                            
                         </div>
                 )
-                    
             }
-        </div>
+           </div>
+            <div className='c-link'>
+             {
+                loaderData.map(data=><Sidebar key={data.id} data={data}></Sidebar>)
+             }
+            </div>
+            
+           </div>
         </div>
     );
 };

@@ -20,12 +20,15 @@ function App() {
         {path:'/register',element:<Register></Register>},
         {path:'/faq',element:<Faq></Faq>},
         {path:'/blog',element:<Blog></Blog>},
+        
         {path:'/courses',
-          element:<PrivateRoutes>
-            <Courses/>
-          </PrivateRoutes>},
-        {path:'/coursedetails',
-          element:<PrivateRoutes>
+        loader:()=>fetch(`http://localhost:5000/courses`),
+          element:<Courses/>
+        },
+        
+        {path:'/coursedetails/:id',
+        loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
+         element:<PrivateRoutes>
             <CourseDetails></CourseDetails>
           </PrivateRoutes>},
           {path:'*',element:<div>

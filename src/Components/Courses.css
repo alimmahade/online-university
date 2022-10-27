@@ -1,0 +1,45 @@
+.img-size{
+    width: 5rem;
+    height: 5rem;
+}
+
+.layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    grid-gap: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+}
+.c-card{
+    margin: 10px;
+    padding: 15px;
+    background-color: bisque;
+    color: black
+
+}
+.card h2{
+    font-size: larger;
+    font-weight: bolder;
+}
+h1{
+    font-size: xx-large;
+    font-weight: bold;
+    color: antiquewhite;
+}
+.c-link{
+    background-color: aqua;
+    width: 15%;
+   
+}
+.c-link button{
+    margin: 20px;
+    padding: 20px;
+    background-color: darkmagenta;
+    color: white; 
+      
+}
+.c-container{
+    display: flex;
+}

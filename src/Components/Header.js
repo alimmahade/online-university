@@ -28,8 +28,8 @@ const Header = () => {
                 <NavLink className="btn btn-ghost normal-case text-xl" to='courses'>Courses</NavLink>
                 <NavLink className="btn btn-ghost normal-case text-xl" to='faq'>FAQ</NavLink>
                 <NavLink className="btn btn-ghost normal-case text-xl" to='blog'>Blog</NavLink>
-                {user?.uid&&<span>Welcome: {user.email}</span>}
-                
+                {user?.uid&&<span>Welcome: {user.displayName}</span>}
+                {user?.uid&&<span><img className='w-3 h-3' src={user.photoURL} alt="" /></span>}
                 
                 {user?.uid? <button onClick={handleLogOut} className="btn btn-secondary">Log Out</button>
                 :<NavLink className="btn btn-ghost normal-case text-xl" to='login'>Login</NavLink>}
@@ -37,5 +37,4 @@ const Header = () => {
         </div>
     );
 };
-
 export default Header;
