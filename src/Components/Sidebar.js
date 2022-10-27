@@ -6,7 +6,7 @@ const Sidebar = ({data}) => {
 
     return (
         <div>
-            <button className='btn-secondary p-2 border-2 rounded-lg'> <Link to={`/coursedetails/1`}>{data.name}</Link> </button>
+            <button className='btn-secondary p-2 border-2 rounded-lg'> <Link to={`/coursedetails/${data.id}`}>{data.name}</Link> </button>
         </div>
     );
 };

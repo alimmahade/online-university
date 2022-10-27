@@ -20,11 +20,8 @@ const Courses = () => {
                     <div>
                         <div className='c-card'>
                         <Card.Img variant="top" src={loaderData.picture} className='img-size' />
-                            <h2>{loaderData.name}</h2>
+                            <h2 className='bol'>{loaderData.name}</h2>
                             <p>{loaderData.details}</p>
-                            <div>
-                            <button className='btn-secondary p-2 border-2 rounded-lg'>Course Detail</button>
-                            </div>
                             </div>
                             
                         </div>

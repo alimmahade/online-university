@@ -23,13 +23,17 @@ function App() {
         
         {path:'/courses',
         loader:()=>fetch(`http://localhost:5000/courses`),
-          element:<Courses/>
+          element:<PrivateRoutes>
+            <Courses/>
+          </PrivateRoutes>
         },
         
         {path:'/coursedetails/:id',
         loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
          element:<PrivateRoutes>
-            <CourseDetails></CourseDetails>
+            <CourseDetails>
+
+            </CourseDetails>
           </PrivateRoutes>},
           {path:'*',element:<div>
             <h1 className="text-5xl font-bold">Unhandled Thrown Error!

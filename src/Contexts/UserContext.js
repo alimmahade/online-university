@@ -38,7 +38,10 @@ const logOut=()=>{
     return ()=>{unsubscribe();}
 }, [])
     
-    const authInfo={user,loading,createUser,userLogIn,logOut,signInWithGoogle, signInWithGithub};
+    const authInfo={user,loading,
+        createUser,userLogIn,
+        logOut,signInWithGoogle, 
+        signInWithGithub};
 return (
         <AuthContext.Provider value={authInfo}>
             {children}

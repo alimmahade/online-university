@@ -3,6 +3,7 @@ import { AuthContext } from '../Contexts/UserContext';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Register = () => {
@@ -29,6 +30,7 @@ const Register = () => {
     const handleGoogleSignIn=()=>{
       signInWithGoogle()
       .then(result=>{
+        const cretential=GoogleAuthProvider.credentialFromResult(result);
         const user= result.user;
         console.log(user)
       })
